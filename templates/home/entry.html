@@ -1,0 +1,40 @@
+{% extends 'home/layout.html' %}
+
+{% block body %} 
+
+<br>
+<br>
+<br>
+
+<div class="row row-cols-1 row-cols-md-1 g-4">
+    <div class="col">
+      <div class="card">
+        <form class="p-4" method="get" action="/"></form>
+        
+        <div class="card-body">
+ 
+            <div class="card">
+                <div class="card-body">
+                {% for i in range( tags|length + 1 ) %}                
+                  Tag-{{i}}<br>
+                  <label for="key-{{i}}">Key</label>
+                  <input id="key-{{i}}" type="text" aria-label="key-{{i}}" class="form-control" name="key-{{i}}" size="20" value = {{ 'key-' ~ i }}><br>                  
+                  <label for="value-{{i}}">Value</label>
+                  <input id="value-{{i}}" type="value-{{i}}" aria-label="value-{{i}}" class="form-control" name="value-{{i}}" size="40" value={{sadsada}}><br>
+                  <br>
+                {% endfor %}
+                <input class="btn btn-primary" type="submit" name="new_tag" value="Add new tag">                
+                </div> 
+            </div>
+
+            <div class="d-grid gap-2">
+                <input class="btn btn-primary" type="submit" name="add_entry" value="Add entry">
+            </div>
+        </div>
+      </form>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}
