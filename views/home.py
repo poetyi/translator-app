@@ -34,5 +34,7 @@ def search():
         
         else:
             results = ["No match."]
+    else:
+        results = []
 
     return render_template('home/index.html', results = results)
